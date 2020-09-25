@@ -37,14 +37,14 @@
   </licenses>
 
   <issueManagement>
-    <url>https://github.com/annot8/annot8/issues</url>
+    <url>https://github.com/annot8/annot8-api/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
   <scm>
-    <url>https://github.com/annot8/annot8/</url>
-    <connection>scm:git:git://github.com/annot8/annot8.git</connection>
-    <developerConnection>scm:git:git@github.com/annot8/annot8.git</developerConnection>
+    <url>https://github.com/annot8/annot8-api/</url>
+    <connection>scm:git:git://github.com/annot8/annot8-api.git</connection>
+    <developerConnection>scm:git:git@github.com/annot8/annot8-api.git</developerConnection>
   </scm>
 
   <properties>
