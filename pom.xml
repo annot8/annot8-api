@@ -6,7 +6,7 @@
 
   <groupId>io.annot8</groupId>
   <artifactId>annot8-api</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Annot8 API</name>
   <description>Core API interfaces for the Annot8 project</description>
 
@@ -54,9 +54,9 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-    <junit.version>5.7.0</junit.version>
-    <mockito.version>3.5.13</mockito.version>
-    <assertj-core.version>3.17.2</assertj-core.version>
+    <junit.version>5.7.1</junit.version>
+    <mockito.version>3.9.0</mockito.version>
+    <assertj-core.version>3.19.0</assertj-core.version>
 
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
