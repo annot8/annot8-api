@@ -6,7 +6,7 @@
 
   <groupId>io.annot8</groupId>
   <artifactId>annot8-api</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <name>Annot8 API</name>
   <description>Core API interfaces for the Annot8 project</description>
 
@@ -54,18 +54,18 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-    <junit.version>5.7.0</junit.version>
-    <mockito.version>3.5.13</mockito.version>
-    <assertj-core.version>3.17.2</assertj-core.version>
+    <junit.version>5.7.2</junit.version>
+    <mockito.version>3.10.0</mockito.version>
+    <assertj-core.version>3.19.0</assertj-core.version>
 
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <speedy-spotless.version>0.1.1</speedy-spotless.version>
+    <speedy-spotless.version>0.1.3</speedy-spotless.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-    <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
-    <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+    <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+    <maven-javadoc-plugin.version>3.3.0</maven-javadoc-plugin.version>
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <githook-maven-plugin.version>1.0.5</githook-maven-plugin.version>
   </properties>

@@ -24,6 +24,8 @@ public interface Pipeline extends Closeable {
 
   Collection<Processor> getProcessors();
 
+  ErrorConfiguration getErrorConfiguration();
+
   SourceResponse read(ItemFactory itemFactory);
 
   ProcessorResponse process(Item item);
@@ -43,6 +45,8 @@ public interface Pipeline extends Closeable {
     Builder withResource(Resource resource);
 
     Builder withContext(Context context);
+
+    Builder withErrorConfiguration(ErrorConfiguration errorConfiguration);
 
     Pipeline build();
   }

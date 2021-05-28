@@ -1,6 +1,8 @@
 /* Annot8 (annot8.io) - Licensed under Apache-2.0. */
 package io.annot8.api.data;
 
+import java.util.function.Consumer;
+
 /**
  * Factory to createContent new items.
  *
@@ -24,4 +26,21 @@ public interface ItemFactory {
    * @return non-null
    */
   Item create(Item parent);
+
+  /**
+   * Create a new item and immediately do something with it
+   *
+   * @param func Actions to be performed on item
+   * @return The created item
+   */
+  Item create(Consumer<Item> func);
+
+  /**
+   * Create a new item with a parent and immediately do something with it
+   *
+   * @param parent Parent item
+   * @param func Actions to be performed on item
+   * @return The created item
+   */
+  Item create(Item parent, Consumer<Item> func);
 }

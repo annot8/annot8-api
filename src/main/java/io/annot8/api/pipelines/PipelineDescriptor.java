@@ -31,6 +31,13 @@ public interface PipelineDescriptor extends WithName, WithDescription {
    */
   Collection<ProcessorDescriptor> getProcessors();
 
+  /**
+   * Return the error configuration that will be used with this pipeline
+   *
+   * @return error configuration
+   */
+  ErrorConfiguration getErrorConfiguration();
+
   /** Builder interface for building new pipeline descriptors */
   interface Builder {
     /**
@@ -80,6 +87,14 @@ public interface PipelineDescriptor extends WithName, WithDescription {
      * @return builder
      */
     PipelineDescriptor.Builder withProcessor(ProcessorDescriptor processor);
+
+    /**
+     * Set the error configuration for the pipeline
+     *
+     * @param errorConfiguration error configuration to use
+     * @return builder
+     */
+    PipelineDescriptor.Builder withErrorConfiguration(ErrorConfiguration errorConfiguration);
 
     /**
      * Add multiple sources to the pipeline that is being built, in the order provided
