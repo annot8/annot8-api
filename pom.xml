@@ -9,6 +9,7 @@
   <version>1.1</version>
   <name>Annot8 API</name>
   <description>Core API interfaces for the Annot8 project</description>
+  <url>http://annot8.io</url>
 
   <developers>
     <developer>
