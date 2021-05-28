@@ -12,7 +12,7 @@ As a simple example, this could be extracting e-mail addresses from a collection
 
 ## Terminology
 
-* Annotation - Some information highlighted in Content, for example a span of text
+* Annotation - Some information highlighted in Content, for example a span of text or a segment of audio
 * Content - A “view” on an Item, for example the text extracted from a Word document
 * Item - A data object for processing, for example a Word document
 * Processor - A processor is an Annot8 component that processes Content in some way, for example annotating e-mail addresses
