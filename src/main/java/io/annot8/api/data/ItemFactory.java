@@ -17,7 +17,7 @@ public interface ItemFactory {
    *
    * @return non-null
    */
-  default Item create(){
+  default Item create() {
     return create(null, null, null);
   }
 
@@ -27,7 +27,7 @@ public interface ItemFactory {
    * @param id the ID of the item
    * @return non-null
    */
-  default Item create(String id){
+  default Item create(String id) {
     return create(null, id, null);
   }
 
@@ -37,7 +37,7 @@ public interface ItemFactory {
    * @param parent the parent
    * @return non-null
    */
-  default Item create(Item parent){
+  default Item create(Item parent) {
     return create(parent, null, null);
   }
 
@@ -56,7 +56,7 @@ public interface ItemFactory {
    * @param func Actions to be performed on item
    * @return The created item
    */
-  default Item create(Consumer<Item> func){
+  default Item create(Consumer<Item> func) {
     return create(null, null, func);
   }
 
@@ -67,7 +67,7 @@ public interface ItemFactory {
    * @param id the ID of the item
    * @return The created item
    */
-  default Item create(String id, Consumer<Item> func){
+  default Item create(String id, Consumer<Item> func) {
     return create(null, id, func);
   }
 
@@ -78,7 +78,7 @@ public interface ItemFactory {
    * @param func Actions to be performed on item
    * @return The created item
    */
-  default Item create(Item parent, Consumer<Item> func){
+  default Item create(Item parent, Consumer<Item> func) {
     return create(parent, null, func);
   }
 
@@ -90,11 +90,10 @@ public interface ItemFactory {
    * @param id the ID of the item (null to use default ID)
    * @return The created item
    */
-  default Item create(Item parent, String id, Consumer<Item> func){
+  default Item create(Item parent, String id, Consumer<Item> func) {
     Item item = create(parent, id);
 
-    if(func != null)
-      func.accept(item);
+    if (func != null) func.accept(item);
 
     return item;
   }
