@@ -11,18 +11,28 @@ import java.util.Set;
  */
 public interface PipelineItemState {
 
-  /** Update the status of an item */
+  /**
+   * Update the status of an item
+   *
+   * @param itemId the id of the item
+   * @param status the status to set to
+   */
   void setItemStatus(String itemId, ItemStatus status);
 
-  /** Return all items recorded in this history */
+  /** @return all items recorded in this history */
   Map<String, ItemStatus> getAll();
 
-  /** Return the status of a specific item */
+  /**
+   * Get the status for the given item
+   *
+   * @param itemId the id of the item
+   * @return the status of a specific item
+   */
   default Optional<ItemStatus> getItemStatus(String itemId) {
     return Optional.ofNullable(getAll().get(itemId));
   }
 
-  /** Return a set of all IDs currently recorded in this history */
+  /** @return Return a set of all IDs currently recorded in this history */
   default Set<String> getIds() {
     return getAll().keySet();
   }
