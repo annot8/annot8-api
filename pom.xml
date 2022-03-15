@@ -6,7 +6,7 @@
 
   <groupId>io.annot8</groupId>
   <artifactId>annot8-api</artifactId>
-  <version>1.2</version>
+  <version>1.3-SNAPSHOT</version>
   <name>Annot8 API</name>
   <description>Core API interfaces for the Annot8 project</description>
   <url>http://annot8.io</url>
