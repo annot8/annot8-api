@@ -75,7 +75,7 @@ public interface Group extends WithId, WithType, WithProperties {
    * @param content the content
    * @return annotations in that content
    */
-  default Stream<Annotation> getAnnotationsForContent(Content content) {
+  default Stream<Annotation> getAnnotationsForContent(Content<?> content) {
     return getAnnotations().values().stream()
         .flatMap(s -> s)
         .filter(a -> content.getId().equals(a.getContentId()));
@@ -88,7 +88,7 @@ public interface Group extends WithId, WithType, WithProperties {
    * @param role the role to filter on
    * @return annotation in that content of that role
    */
-  default Stream<Annotation> getAnnotationsForContentAndRole(Content content, String role) {
+  default Stream<Annotation> getAnnotationsForContentAndRole(Content<?> content, String role) {
     return getAnnotations(role).filter(a -> content.getId().equals(a.getContentId()));
   }
 

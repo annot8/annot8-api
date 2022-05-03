@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class MutablePropertiesTest extends PropertiesTestResources {
 
   @Test
-  public void testSet() {
+  void testSet() {
     MutableProperties properties = new TestProperties(getPropertyMap());
     String replacementKey = "replacementKey";
     String replacementValue = "replacementValue";
@@ -29,7 +29,7 @@ public class MutablePropertiesTest extends PropertiesTestResources {
   }
 
   @Test
-  public void testRemoveAll() {
+  void testRemoveAll() {
     MutableProperties properties = new TestProperties(getPropertyMap());
     assertEquals(1, properties.getAll().size());
 
@@ -39,7 +39,7 @@ public class MutablePropertiesTest extends PropertiesTestResources {
   }
 
   @Test
-  public void testAdd() {
+  void testAdd() {
     String newKey = "newKey";
     String newValue = "newValue";
     Map<String, Object> newProperties = new HashMap<>();
@@ -53,7 +53,7 @@ public class MutablePropertiesTest extends PropertiesTestResources {
   }
 
   @Test
-  public void testRemove() {
+  void testRemove() {
     MutableProperties properties = new TestProperties(getPropertyMap());
     List<String> nonExistentKeys = new ArrayList<>();
     nonExistentKeys.add("nonExistentKey");

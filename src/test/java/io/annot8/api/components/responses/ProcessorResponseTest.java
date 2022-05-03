@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 public class ProcessorResponseTest {
 
   @Test
-  public void testOk() {
+  void testOk() {
     ProcessorResponse pr = ProcessorResponse.ok();
 
     assertEquals(ProcessorResponse.Status.OK, pr.getStatus());
@@ -21,7 +21,7 @@ public class ProcessorResponseTest {
   }
 
   @Test
-  public void testItemError() {
+  void testItemError() {
     ProcessorResponse pr = ProcessorResponse.itemError();
 
     assertEquals(Status.ITEM_ERROR, pr.getStatus());
@@ -30,7 +30,7 @@ public class ProcessorResponseTest {
   }
 
   @Test
-  public void testItemErrorExceptionCollection() {
+  void testItemErrorExceptionCollection() {
     Collection<Exception> ex = new ArrayList<>();
     ex.add(new IOException("Test exception"));
     ex.add(new IllegalArgumentException("Another test exception"));
@@ -44,7 +44,7 @@ public class ProcessorResponseTest {
   }
 
   @Test
-  public void testItemErrorExceptionArgs() {
+  void testItemErrorExceptionArgs() {
     ProcessorResponse pr =
         ProcessorResponse.itemError(
             new IOException("Test exception"),
@@ -56,7 +56,7 @@ public class ProcessorResponseTest {
   }
 
   @Test
-  public void testProcessingError() {
+  void testProcessingError() {
     ProcessorResponse pr = ProcessorResponse.processingError();
 
     assertEquals(Status.PROCESSOR_ERROR, pr.getStatus());
@@ -65,7 +65,7 @@ public class ProcessorResponseTest {
   }
 
   @Test
-  public void testProcessingErrorExceptionCollection() {
+  void testProcessingErrorExceptionCollection() {
     Collection<Exception> ex = new ArrayList<>();
     ex.add(new IOException("Test exception"));
     ex.add(new IllegalArgumentException("Another test exception"));
@@ -79,7 +79,7 @@ public class ProcessorResponseTest {
   }
 
   @Test
-  public void testProcessorErrorExceptionArgs() {
+  void testProcessorErrorExceptionArgs() {
     ProcessorResponse pr =
         ProcessorResponse.processingError(
             new IOException("Test exception"),
@@ -91,7 +91,7 @@ public class ProcessorResponseTest {
   }
 
   @Test
-  public void testEqualsAndHashCode() {
+  void testEqualsAndHashCode() {
 
     assertEquals(ProcessorResponse.ok(), ProcessorResponse.ok());
     assertEquals(ProcessorResponse.ok().hashCode(), ProcessorResponse.ok().hashCode());

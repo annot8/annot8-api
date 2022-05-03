@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class SourceResponseTest {
 
   @Test
-  public void testOk() {
+  void testOk() {
     SourceResponse sr = SourceResponse.ok();
 
     assertEquals(SourceResponse.Status.OK, sr.getStatus());
@@ -20,7 +20,7 @@ public class SourceResponseTest {
   }
 
   @Test
-  public void testDone() {
+  void testDone() {
     SourceResponse sr = SourceResponse.done();
 
     assertEquals(SourceResponse.Status.DONE, sr.getStatus());
@@ -29,7 +29,7 @@ public class SourceResponseTest {
   }
 
   @Test
-  public void testSourceError() {
+  void testSourceError() {
     SourceResponse sr = SourceResponse.sourceError();
 
     assertEquals(SourceResponse.Status.SOURCE_ERROR, sr.getStatus());
@@ -38,7 +38,7 @@ public class SourceResponseTest {
   }
 
   @Test
-  public void testSourceErrorExceptionCollection() {
+  void testSourceErrorExceptionCollection() {
     Collection<Exception> ex = new ArrayList<>();
     ex.add(new IOException("Test exception"));
     ex.add(new IllegalArgumentException("Another test exception"));
@@ -52,7 +52,7 @@ public class SourceResponseTest {
   }
 
   @Test
-  public void testSourceErrorExceptionArgs() {
+  void testSourceErrorExceptionArgs() {
     SourceResponse sr =
         SourceResponse.sourceError(
             new IOException("Test exception"),
@@ -64,7 +64,7 @@ public class SourceResponseTest {
   }
 
   @Test
-  public void testEmpty() {
+  void testEmpty() {
     SourceResponse sr = SourceResponse.empty();
 
     assertEquals(SourceResponse.Status.EMPTY, sr.getStatus());
@@ -73,7 +73,7 @@ public class SourceResponseTest {
   }
 
   @Test
-  public void testEqualsAndHashCode() {
+  void testEqualsAndHashCode() {
 
     assertEquals(SourceResponse.ok(), SourceResponse.ok());
     assertEquals(SourceResponse.ok().hashCode(), SourceResponse.ok().hashCode());

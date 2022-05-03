@@ -37,7 +37,7 @@ public class GroupTest {
   private static final String TEST_CONTENT_DESCRIPTION = "contentDescription";
 
   @Test
-  public void testGetAnnotations() {
+  void testGetAnnotations() {
     String testRole2 = "testRole2";
     String annotationId2 = "annotationId2";
     AnnotationReference reference = getTestAnnotationReference(TEST_ANNOTATION_ID);
@@ -62,7 +62,7 @@ public class GroupTest {
   }
 
   @Test
-  public void testGetAnnotationsForRole() {
+  void testGetAnnotationsForRole() {
     Group group = getDefaultTestGroup();
 
     List<Annotation> annotations = group.getAnnotations(TEST_ROLE).collect(Collectors.toList());
@@ -74,7 +74,7 @@ public class GroupTest {
   }
 
   @Test
-  public void testGetRoles() {
+  void testGetRoles() {
     Group group = getDefaultTestGroup();
 
     List<String> roles = group.getRoles().collect(Collectors.toList());
@@ -83,7 +83,7 @@ public class GroupTest {
   }
 
   @Test
-  public void testGetAnnotationsForContent() {
+  void testGetAnnotationsForContent() {
     Group group = getDefaultTestGroup();
     Content<?> content = Mockito.mock(Content.class);
     doReturn(TEST_CONTENT_ID).when(content).getId();
@@ -102,7 +102,7 @@ public class GroupTest {
   }
 
   @Test
-  public void testGetAnnotationsForContentAndRole() {
+  void testGetAnnotationsForContentAndRole() {
     Group group = getDefaultTestGroup();
     Content<?> content = Mockito.mock(Content.class);
     doReturn(TEST_CONTENT_ID).when(content).getId();
@@ -122,7 +122,7 @@ public class GroupTest {
   }
 
   @Test
-  public void testContainsRole() {
+  void testContainsRole() {
     Group group = getDefaultTestGroup();
 
     assertTrue(group.containsRole(TEST_ROLE));
@@ -130,7 +130,7 @@ public class GroupTest {
   }
 
   @Test
-  public void testSameGroup() {
+  void testSameGroup() {
     Group group = getDefaultTestGroup();
     Group group2 = getDefaultTestGroup();
     assertTrue(group.sameGroup(group2));

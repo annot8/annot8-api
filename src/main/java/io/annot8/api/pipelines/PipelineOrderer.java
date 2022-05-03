@@ -5,6 +5,7 @@ import io.annot8.api.components.ProcessorDescriptor;
 import io.annot8.api.components.SourceDescriptor;
 import java.util.Collection;
 
+@SuppressWarnings("rawtypes")
 public interface PipelineOrderer {
   Collection<ProcessorDescriptor> orderProcessors(Collection<ProcessorDescriptor> processors);
 

@@ -15,7 +15,7 @@ import org.mockito.Mockito;
 public class AnnotationTest {
 
   @Test
-  public void testGetBounds() {
+  void testGetBounds() {
     Bounds bounds = Mockito.mock(TestBounds.class);
     Annotation annotation = Mockito.mock(Annotation.class);
     doReturn(bounds).when(annotation).getBounds();
@@ -30,7 +30,7 @@ public class AnnotationTest {
   }
 
   @Test
-  public void sameAnnotation() {
+  void sameAnnotation() {
     String annotationId1 = "annId1";
     String annotationId2 = "annId2";
     Annotation ann1 = new TestAnnotation(annotationId1, null, null, null, null);

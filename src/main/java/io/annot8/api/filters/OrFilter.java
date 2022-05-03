@@ -2,6 +2,8 @@
 package io.annot8.api.filters;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -11,15 +13,17 @@ import java.util.stream.Stream;
  */
 public class OrFilter<T> implements Filter<T> {
 
-  private final Filter<T>[] filters;
+  private final List<Filter<T>> filters;
 
+  @SafeVarargs
   public OrFilter(Filter<T>... filters) {
-    this.filters = filters;
+    this.filters =
+        Arrays.stream(filters).filter(Filter.class::isInstance).collect(Collectors.toList());
   }
 
   @Override
   public boolean test(T t) {
-    return Arrays.stream(filters).anyMatch(f -> f.test(t));
+    return filters.stream().anyMatch(f -> f.test(t));
   }
 
   /**
@@ -27,7 +31,7 @@ public class OrFilter<T> implements Filter<T> {
    *
    * @return filters
    */
-  public Stream<Filter> getFilters() {
-    return Arrays.stream(filters);
+  public Stream<Filter<T>> getFilters() {
+    return filters.stream();
   }
 }

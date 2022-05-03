@@ -1,7 +1,10 @@
 /* Annot8 (annot8.io) - Licensed under Apache-2.0. */
 package io.annot8.api.stores;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import io.annot8.api.annotations.Annotation;
 import io.annot8.api.annotations.Annotation.Builder;
@@ -11,26 +14,32 @@ import io.annot8.api.data.Content;
 import io.annot8.api.exceptions.IncompleteException;
 import io.annot8.api.properties.ImmutableProperties;
 import io.annot8.api.properties.Properties;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 /** Unit tests for the default method implementations on {@link AnnotationStore} */
-public class AnnotationStoreTest {
+class AnnotationStoreTest {
 
   Content<?> content = null;
 
   @Test
-  public void testCreate() {
+  void testCreate() {
     AnnotationStore store = new TestAnnotationStore(content);
     Annotation.Builder builder = store.create();
     assertNotNull(builder);
   }
 
   @Test
-  public void testCopy() {
+  void testCopy() {
     String testId = "testId";
     AnnotationStore store = new TestAnnotationStore(content);
     Builder builder = store.copy(new TestAnnotation(testId, null, null, null, null));
@@ -44,7 +53,7 @@ public class AnnotationStoreTest {
   }
 
   @Test
-  public void testEdit() {
+  void testEdit() {
     String testId = "testId";
     AnnotationStore store = new TestAnnotationStore(content);
     Annotation annotation = new TestAnnotation(testId, null, null, null, null);
@@ -60,7 +69,7 @@ public class AnnotationStoreTest {
   }
 
   @Test
-  public void testDelete() {
+  void testDelete() {
     String testId = "testId";
     Annotation annotation = new TestAnnotation(testId, null, null, null, null);
     AnnotationStore store = new TestAnnotationStore(content, Collections.singleton(annotation));
@@ -70,7 +79,7 @@ public class AnnotationStoreTest {
   }
 
   @Test
-  public void testDeleteAll() {
+  void testDeleteAll() {
     Annotation annotation = new TestAnnotation("test", null, null, null, null);
     AnnotationStore store = new TestAnnotationStore(content, Collections.singleton(annotation));
     assertEquals(1, store.getAll().count());
@@ -79,7 +88,7 @@ public class AnnotationStoreTest {
   }
 
   @Test
-  public void testDeleteCollection() {
+  void testDeleteCollection() {
     Annotation annotation = new TestAnnotation("test", null, null, null, null);
     Collection<Annotation> collection = Collections.singleton(annotation);
     AnnotationStore store = new TestAnnotationStore(content, collection);
@@ -89,7 +98,7 @@ public class AnnotationStoreTest {
   }
 
   @Test
-  public void testGetByType() {
+  void testGetByType() {
     String id1 = "id1";
     String id2 = "id2";
     Annotation annotation = new TestAnnotation(id1, "type", null, null, null);
@@ -107,7 +116,7 @@ public class AnnotationStoreTest {
   }
 
   @Test
-  public void testGetByBounds() {
+  void testGetByBounds() {
     String id1 = "id1";
     String id2 = "id2";
     Annotation annotation =
@@ -126,7 +135,7 @@ public class AnnotationStoreTest {
   }
 
   @Test
-  public void testFilter() {
+  void testFilter() {
     String id1 = "id1";
     String id2 = "id2";
     Annotation annotation =
@@ -193,7 +202,6 @@ public class AnnotationStoreTest {
 
     private String id;
     private String type;
-    private ImmutableProperties properties;
 
     @Override
     public Builder withType(String type) {

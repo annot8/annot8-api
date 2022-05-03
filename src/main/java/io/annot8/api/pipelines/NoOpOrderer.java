@@ -5,6 +5,7 @@ import io.annot8.api.components.ProcessorDescriptor;
 import io.annot8.api.components.SourceDescriptor;
 import java.util.Collection;
 
+@SuppressWarnings("rawtypes")
 public final class NoOpOrderer implements PipelineOrderer {
 
   private static final NoOpOrderer INSTANCE = new NoOpOrderer();
