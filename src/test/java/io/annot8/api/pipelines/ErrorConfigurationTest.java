@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class ErrorConfigurationTest {
   @Test
-  public void test() {
+  void test() {
     ErrorConfiguration ec = new ErrorConfiguration();
 
     assertNotNull(ec.getOnItemError());
@@ -27,7 +27,7 @@ public class ErrorConfigurationTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     ErrorConfiguration ec1 = new ErrorConfiguration();
     ErrorConfiguration ec2 = new ErrorConfiguration();
 

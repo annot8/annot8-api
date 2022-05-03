@@ -24,7 +24,7 @@ public class NotFilter<T> implements Filter<T> {
    *
    * @return filter
    */
-  public Filter getFilter() {
+  public Filter<T> getFilter() {
     return filter;
   }
 }

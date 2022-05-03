@@ -14,6 +14,7 @@ import java.util.Collection;
  * <p>The ordering is implementation dependent (i.e. an implementation may return processors in the
  * order they were added, or in the order that makes sense based on their capabilities)
  */
+@SuppressWarnings("rawtypes")
 public interface PipelineDescriptor extends WithName, WithDescription {
   /**
    * Return an ordered list of {@link SourceDescriptor}s describing the sources that will feed data

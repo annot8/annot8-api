@@ -25,14 +25,14 @@ public class GroupStoreTest {
   Item item = null;
 
   @Test
-  public void testCreate() {
+  void testCreate() {
     GroupStore store = new TestGroupStore(item);
     Builder builder = store.create();
     assertNotNull(builder);
   }
 
   @Test
-  public void testCopy() {
+  void testCopy() {
     TestGroup group = new TestGroup(GROUP_ID, null, null, null, null);
     GroupStore store = new TestGroupStore(item);
     Group copied = null;
@@ -46,7 +46,7 @@ public class GroupStoreTest {
   }
 
   @Test
-  public void testEdit() {
+  void testEdit() {
     TestGroup group = new TestGroup(GROUP_ID, null, null, null, null);
     GroupStore store = new TestGroupStore(item);
     Group edit = null;
@@ -60,7 +60,7 @@ public class GroupStoreTest {
   }
 
   @Test
-  public void testDeleteAll() {
+  void testDeleteAll() {
     TestGroup group = new TestGroup(GROUP_ID, null, null, null, null);
     GroupStore store = new TestGroupStore(item, Collections.singleton(group));
     assertEquals(1, store.getAll().count());
@@ -69,7 +69,7 @@ public class GroupStoreTest {
   }
 
   @Test
-  public void testDeleteCollection() {
+  void testDeleteCollection() {
     TestGroup group = new TestGroup(GROUP_ID, null, null, null, null);
     GroupStore store = new TestGroupStore(item, Collections.singleton(group));
     assertEquals(1, store.getAll().count());
@@ -78,7 +78,7 @@ public class GroupStoreTest {
   }
 
   @Test
-  public void testGetByType() {
+  void testGetByType() {
     String type = "testType";
     TestGroup group = new TestGroup(GROUP_ID, type, null, null, null);
     TestGroup group2 = new TestGroup("id2", "type2", null, null, null);
@@ -92,7 +92,7 @@ public class GroupStoreTest {
   }
 
   @Test
-  public void testFilter() {
+  void testFilter() {
     String type = "testType";
     TestGroup group = new TestGroup(GROUP_ID, type, null, null, null);
     TestGroup group2 = new TestGroup("id2", "type2", null, null, null);

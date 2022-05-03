@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 public class PropertiesTest extends PropertiesTestResources {
 
   @Test
-  public void testHas() {
+  void testHas() {
     TestProperties properties = new TestProperties(new HashMap<>());
     assertFalse(properties.has(TEST_KEY));
 
@@ -23,21 +23,21 @@ public class PropertiesTest extends PropertiesTestResources {
   }
 
   @Test
-  public void testGet() {
+  void testGet() {
     TestProperties properties = new TestProperties(getPropertyMap());
     assertEquals(TEST_VALUE, properties.get(TEST_KEY).get());
     assertFalse(properties.get("nonExistentKey").isPresent());
   }
 
   @Test
-  public void testGetOrDefault() {
+  void testGetOrDefault() {
     TestProperties properties = new TestProperties(getPropertyMap());
     assertEquals(TEST_VALUE, properties.getOrDefault(TEST_KEY, DEFAULT_VALUE));
     assertEquals(DEFAULT_VALUE, properties.getOrDefault("nonExistentKey", DEFAULT_VALUE));
   }
 
   @Test
-  public void testGetProperty() {
+  void testGetProperty() {
     TestProperties properties = new TestProperties(getPropertyMap());
     assertEquals(TEST_VALUE, properties.get(TEST_KEY, String.class).get());
     assertFalse(properties.get("nonExistentKey", String.class).isPresent());
@@ -45,21 +45,21 @@ public class PropertiesTest extends PropertiesTestResources {
   }
 
   @Test
-  public void testGetObjectOrDefault() {
+  void testGetObjectOrDefault() {
     TestProperties properties = new TestProperties(getPropertyMap());
     assertEquals(TEST_VALUE, properties.getObjectOrDefault(TEST_KEY, DEFAULT_VALUE));
     assertEquals(DEFAULT_VALUE, properties.getObjectOrDefault("nonExistentKey", DEFAULT_VALUE));
   }
 
   @Test
-  public void testKeys() {
+  void testKeys() {
     TestProperties properties = new TestProperties(getPropertyMap());
     assertEquals(1, properties.keys().count());
     assertEquals(TEST_KEY, properties.keys().findFirst().get());
   }
 
   @Test
-  public void testListKeys() {
+  void testListKeys() {
     TestProperties properties = new TestProperties(getPropertyMap());
     assertEquals(1, properties.listKeys(String.class).count());
     assertEquals(TEST_KEY, properties.listKeys(String.class).findFirst().get());
@@ -67,7 +67,7 @@ public class PropertiesTest extends PropertiesTestResources {
   }
 
   @Test
-  public void testGetAll() {
+  void testGetAll() {
     TestProperties properties = new TestProperties(getPropertyMap());
     assertEquals(1, properties.getAll(String.class).size());
     assertEquals(TEST_VALUE, properties.getAll(String.class).get(TEST_KEY));

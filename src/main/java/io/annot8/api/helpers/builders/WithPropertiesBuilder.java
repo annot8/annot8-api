@@ -27,11 +27,11 @@ public interface WithPropertiesBuilder<A> {
    * @param value the value
    * @return a builder with the key-value property pair added to it, if the value is present
    */
+  @SuppressWarnings("unchecked")
   default A withPropertyIfPresent(final String key, final Optional<?> value) {
     if (value.isPresent()) {
       return withProperty(key, value);
     }
-
     return (A) this;
   }
 
@@ -43,6 +43,7 @@ public interface WithPropertiesBuilder<A> {
    * @param condition property is only added if this evaluates to true
    * @return a builder with the key-value property pair added to it, if the condition is met
    */
+  @SuppressWarnings("unchecked")
   default A withPropertyIf(final String key, final Object value, boolean condition) {
     if (condition) {
       return withProperty(key, value);

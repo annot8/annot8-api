@@ -11,7 +11,7 @@ public class ExceptionsTest {
   private static final String TEST_MESSAGE = "Test message";
 
   @Test
-  public void testAll() throws Exception {
+  void testAll() throws Exception {
     testException(AlreadyExistsException.class);
     testException(Annot8Exception.class);
     testException(Annot8RuntimeException.class);
