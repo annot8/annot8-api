@@ -55,9 +55,9 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
-    <junit.version>5.8.2</junit.version>
-    <mockito.version>4.3.1</mockito.version>
-    <assertj-core.version>3.22.0</assertj-core.version>
+    <junit.version>5.9.0</junit.version>
+    <mockito.version>4.7.0</mockito.version>
+    <assertj-core.version>3.23.1</assertj-core.version>
 
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
@@ -188,6 +188,27 @@
             <removeUnusedImports />
           </java>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>3.8.0</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     <pluginManagement>
